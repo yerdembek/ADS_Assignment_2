@@ -7,6 +7,7 @@ public class MyArrayList<T> implements MyList<T> {
         length = 0;
     }
 
+    @Override
     public void add(T element) {
         if (length == elements.length) {
             increaseCapacity();
@@ -22,11 +23,13 @@ public class MyArrayList<T> implements MyList<T> {
         elements = newElements;
     }
 
+    @Override
     public T get(int index) {
         checkIndex(index);
         return (T) elements[index]; //downcasting
     }
 
+    @Override
     public void remove(int index){
         checkIndex(index);
         for (int i = index; i < length - 1; i++) {
@@ -40,8 +43,15 @@ public class MyArrayList<T> implements MyList<T> {
         }
     }
 
+    @Override
     public int size() {
         return length;
+    }
+
+    @Override
+    public void clear() {
+        elements = new Object[5];
+        length = 0;
     }
 
 }
