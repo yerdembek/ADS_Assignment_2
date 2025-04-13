@@ -1,20 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        MyQueue<String> queue = new MyQueue<>();
+        MyStack<String> stack = new MyStack<>();
 
-        System.out.println("Adding elements to queue:");
-        queue.enqueue("Apple");
-        queue.enqueue("Banana");
-        queue.enqueue("Cherry");
+        System.out.println("Pushing elements:");
+        stack.push("First");
+        stack.push("Second");
+        stack.push("Third");
 
-        System.out.println("Current size: " + queue.size());
-        System.out.println("Peek: " + queue.peek());
+        System.out.println("Stack size: " + stack.size());
+        System.out.println("Top of stack (peek): " + stack.peek());
 
-        System.out.println("\nRemoving elements:");
-        while (!queue.isEmpty()) {
-            System.out.println("- " + queue.dequeue());
+        System.out.println("\nPopping elements:");
+        while (!stack.isEmpty()) {
+            System.out.println("- " + stack.pop());
         }
 
-        System.out.println("Size after all removals: " + queue.size());
+        System.out.println("Stack size after popping all: " + stack.size());
     }
 }

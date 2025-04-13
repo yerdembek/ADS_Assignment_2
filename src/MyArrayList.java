@@ -30,12 +30,17 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
-    public void remove(int index){
-        checkIndex(index);
-        for (int i = index; i < length - 1; i++) {
-            elements[i] = elements[i+1];
+    public void remove(int index) {
+        if (index < 0 || index >= length) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
         }
+        for (int i = index; i < length - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
+        elements[length - 1] = null;
+        length--;
     }
+
 
     private void checkIndex(int index){
         if (index < 0 || index >= length) {
