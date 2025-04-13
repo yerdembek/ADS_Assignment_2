@@ -1,20 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        MyStack<String> stack = new MyStack<>();
+        MyMinHeap<Integer> minHeap = new MyMinHeap<>();
 
-        System.out.println("Pushing elements:");
-        stack.push("First");
-        stack.push("Second");
-        stack.push("Third");
+        minHeap.insert(42);
+        minHeap.insert(15);
+        minHeap.insert(23);
+        minHeap.insert(8);
+        minHeap.insert(16);
 
-        System.out.println("Stack size: " + stack.size());
-        System.out.println("Top of stack (peek): " + stack.peek());
+        System.out.println("Heap size: " + minHeap.size());
+        System.out.println("Minimum: " + minHeap.getMin());
 
-        System.out.println("\nPopping elements:");
-        while (!stack.isEmpty()) {
-            System.out.println("- " + stack.pop());
+        System.out.println("\nExtracting elements:");
+        while (!minHeap.isEmpty()) {
+            System.out.println("- " + minHeap.extractMin());
         }
 
-        System.out.println("Stack size after popping all: " + stack.size());
+        System.out.println("Heap size after all extractions: " + minHeap.size());
     }
 }
