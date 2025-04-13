@@ -1,30 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        MyList<String> list = new MyLinkedList<>();
+        MyQueue<String> queue = new MyQueue<>();
 
-        System.out.println("Adding elements...");
-        list.add("One");
-        list.add("Two");
-        list.add("Three");
+        System.out.println("Adding elements to queue:");
+        queue.enqueue("Apple");
+        queue.enqueue("Banana");
+        queue.enqueue("Cherry");
 
-        System.out.println("Current size: " + list.size());
+        System.out.println("Current size: " + queue.size());
+        System.out.println("Peek: " + queue.peek());
 
-        System.out.println("Elements:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println("- " + list.get(i));
+        System.out.println("\nRemoving elements:");
+        while (!queue.isEmpty()) {
+            System.out.println("- " + queue.dequeue());
         }
 
-        System.out.println("\nRemoving element at index 1...");
-        list.remove(1);
-
-        System.out.println("After removal:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println("- " + list.get(i));
-        }
-
-        System.out.println("\nClearing the list...");
-        list.clear();
-
-        System.out.println("Size after clear: " + list.size());
+        System.out.println("Size after all removals: " + queue.size());
     }
 }
